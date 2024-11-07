@@ -59,7 +59,7 @@ public class StatsServiceTest {
 
 
     @Test
-    public void belowAvgMonth() {
+    public void belowAvgMonth() { //кол-во мес. ниже ср.
 
         StatsService service = new StatsService();
 
@@ -72,14 +72,14 @@ public class StatsServiceTest {
     }
 
     @Test
-    public void aboveAvgMonth() {
+    public void aboveAvgMonth() { //кол-во мес. выше  ср.
 
         StatsService service = new StatsService();
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
         int expectedAvg = 5;
-        int actualAvgSum = service.belowAvgMon(sales);
+        int actualAvgSum = service.aboveAvgMon(sales);
 
         Assertions.assertEquals(expectedAvg, actualAvgSum);
     }

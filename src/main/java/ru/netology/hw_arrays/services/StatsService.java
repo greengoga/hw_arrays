@@ -49,17 +49,10 @@ public class StatsService {
 
     public int belowAvgMon(long[] sales) {
         int b = 0;
-        int avgSum = 0;
+        int avgSum = salesSumAvg(sales);
 
         for (int i = 0; i < sales.length; i++) {
-            avgSum = (int) (avgSum + sales[i]);
-        }
-
-        int a = avgSum / sales.length;
-
-
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < a) {
+            if (sales[i] < avgSum) {
                 b += 1;
             }
         }
@@ -67,18 +60,11 @@ public class StatsService {
     }
 
     public int aboveAvgMon(long[] sales) {
+        int avgSum = salesSumAvg(sales);
         int b = 0;
-        int avgSum = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            avgSum = (int) (avgSum + sales[i]);
-        }
-
-        int a = avgSum / sales.length;
-
-
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > a) {
+            if (sales[i] > avgSum) {
                 b += 1;
             }
         }
