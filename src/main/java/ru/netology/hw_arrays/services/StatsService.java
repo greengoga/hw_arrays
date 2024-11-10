@@ -25,47 +25,47 @@ public class StatsService {
         return maxMonth + 1;
     }
 
-    public int salesSum(long[] sales) {
-        int sum = 0;
+    public long salesSum(long[] sales) {
+        long sum = 0;
         for (int i = 0; i < sales.length; i++) {
-            sum = (int) (sum + sales[i]);
+            sum = sum + sales[i];
         }
 
         return sum;
     }
 
-    public int salesSumAvg(long[] sales) {
-        int avgSum = 0;
+    public long salesSumAvg(long[] sales) {
+        long avgSum = 0;
 
         for (int i = 0; i < sales.length; i++) {
-            avgSum = (int) (avgSum + sales[i]);
+            avgSum = avgSum + sales[i];
 
         }
 
-        int aSum = avgSum / sales.length;
+        long aSum = avgSum / sales.length;
 
         return aSum;
     }
 
-    public int belowAvgMon(long[] sales) {
+    public long belowAvgMon(long[] sales) {
         int b = 0;
-        int avgSum = salesSumAvg(sales);
+        long avgSum = salesSumAvg(sales);
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < avgSum) {
-                b += 1;
+        for (long sale : sales) {
+            if (sale < avgSum) {
+                b++;
             }
         }
         return b;
     }
 
-    public int aboveAvgMon(long[] sales) {
-        int avgSum = salesSumAvg(sales);
+    public long aboveAvgMon(long[] sales) {
+        long avgSum = salesSumAvg(sales);
         int b = 0;
 
-        for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > avgSum) {
-                b += 1;
+        for (long sale : sales) {
+            if (sale > avgSum) {
+                b++;
             }
         }
         return b;

@@ -38,8 +38,8 @@ public class StatsServiceTest {
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedSum = 180;
-        int actualSum = service.salesSum(sales);
+        long expectedSum = 180;
+        long actualSum = service.salesSum(sales);
 
         Assertions.assertEquals(expectedSum, actualSum);
     }
@@ -51,8 +51,8 @@ public class StatsServiceTest {
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAvgSum = 15;
-        int actualAvgSum = service.salesSumAvg(sales);
+        long expectedAvgSum = 15;
+        long actualAvgSum = service.salesSumAvg(sales);
 
         Assertions.assertEquals(expectedAvgSum, actualAvgSum);
     }
@@ -65,8 +65,8 @@ public class StatsServiceTest {
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAvg = 5;
-        int actualAvgSum = service.belowAvgMon(sales);
+        long expectedAvg = 5;
+        long actualAvgSum = service.belowAvgMon(sales);
 
         Assertions.assertEquals(expectedAvg, actualAvgSum);
     }
@@ -78,8 +78,8 @@ public class StatsServiceTest {
 
         long[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
 
-        int expectedAvg = 5;
-        int actualAvgSum = service.aboveAvgMon(sales);
+        long expectedAvg = 5;
+        long actualAvgSum = service.aboveAvgMon(sales);
 
         Assertions.assertEquals(expectedAvg, actualAvgSum);
     }
